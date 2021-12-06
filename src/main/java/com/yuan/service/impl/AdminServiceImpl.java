@@ -29,7 +29,7 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public ResultVo adminRegister(String adminName, String adminPassword) {
         synchronized (this) {
-//        根据用户邮箱查询，这个用户是否被注册
+//        根据用户查询，这个用户是否被注册
             Example example = new Example(Admin.class);
             Example.Criteria criteria = example.createCriteria();
             criteria.andEqualTo("adminName", adminName);
@@ -48,7 +48,7 @@ public class AdminServiceImpl implements AdminService {
                     return new ResultVo(ResStatus.NO, "注册失败", null);
                 }
             } else {
-                return new ResultVo(ResStatus.NO, "邮箱已被占用", null);
+                return new ResultVo(ResStatus.NO, "用户名已被占用", null);
             }
         }
     }
