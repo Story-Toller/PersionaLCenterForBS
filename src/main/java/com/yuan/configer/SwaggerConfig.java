@@ -21,7 +21,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.yun.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.yuan.controller"))
 //                过滤扫描路径
                 .build();
 
@@ -31,10 +31,10 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
 //        作者信息
 
-        Contact contact = new Contact("Yun", "https://yun.cn", "1269355513@qq.com");
+        Contact contact = new Contact("连源", "https://github.com/Giraffe0615", "3352892115@qq.com");
         return new ApiInfo(
-                "API doc for yun",
-                "招聘平台API文档，仅用于个人设计",
+                "个人中心",
+                "连源的个人中心API文档",
                 "v2.0",
                 "https://yun.cn",
                 contact,

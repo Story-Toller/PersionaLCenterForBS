@@ -15,20 +15,20 @@
         <!--配置数据陸连接-->
         <jdbcConnection
                 driverClass="com.mysql.cj.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/yun"
+                connectionURL="jdbc:mysql://localhost:3306/yuan"
                 userId="root" password="root">
             <!--                ?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8"-->
         </jdbcConnection>
         <!--配置实体关存放路径-->
         <javaModelGenerator targetPackage="com.yun.beans.entity" targetProject="src/main/java"/>
         <!--配置XML存放路经-->
-        <sqlMapGenerator targetPackage="/" targetProject="src/main/resources/mappers">
+        <sqlMapGenerator targetPackage="/" targetProject="src/main/resources/mapper">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!--配置DAO存放路径-->
         <javaClientGenerator targetPackage="com.yun.dao.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
 <!--        <table tableName="company" schema="yun"/>-->
-        <table tableName="education" schema="yun"/>
+        <table tableName="admin" schema="yuan"/>
 <!--        <table tableName="company_admin" schema="yun"/>-->
 <!--        <table tableName="company_receive_resume_record" schema="yun"/>-->
 <!--        <table tableName="customer" schema="yun"/>-->
