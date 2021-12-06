@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--引入数据库述接置-->
+    <!-- <properties resource="jdbc properties"/>-->
+    <context id="Mysql" targetRuntime="Mybatis3Simple">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!--配置 Genera Mapper ,即默认继承的mapper-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.yun.dao.tk.FamilyMapper"/>
+        </plugin>
+        <!--配置数据陸连接-->
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/yun"
+                userId="root" password="root">
+            <!--                ?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;characterEncoding=utf-8"-->
+        </jdbcConnection>
+        <!--配置实体关存放路径-->
+        <javaModelGenerator targetPackage="com.yun.beans.entity" targetProject="src/main/java"/>
+        <!--配置XML存放路经-->
+        <sqlMapGenerator targetPackage="/" targetProject="src/main/resources/mappers">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+        <!--配置DAO存放路径-->
+        <javaClientGenerator targetPackage="com.yun.dao.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+<!--        <table tableName="company" schema="yun"/>-->
+        <table tableName="education" schema="yun"/>
+<!--        <table tableName="company_admin" schema="yun"/>-->
+<!--        <table tableName="company_receive_resume_record" schema="yun"/>-->
+<!--        <table tableName="customer" schema="yun"/>-->
+<!--        <table tableName="honor" schema="yun"/>-->
+<!--        <table tableName="job" schema="yun"/>-->
+<!--        <table tableName="job_collection" schema="yun"/>-->
+<!--        <table tableName="project_experience" schema="yun"/>-->
+<!--        <table tableName="resume" schema="yun"/>-->
+<!--        <table tableName="resume_delivery_record" schema="yun"/>-->
+<!--        <table tableName="skill" schema="yun"/>-->
+<!--        <table tableName="user" schema="yun"/>-->
+<!--        <table tableName="work_experience" schema="yun"/>-->
+    </context>
+</generatorConfiguration>
